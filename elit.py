@@ -634,11 +634,11 @@ def logo():
   |______ |        |      |   
   |______ |_____ __|__    |                            
  Coded By   : {kk}Rochmat Basuki{P}, Version {kk}Premium{P} Limited User
- Updated By : {kk}Dvanmeploph{P}, Github : {kk}Dvanmeploph""")
+ Updated By : {kk}Dvanmeploph{P}, Github : {kk}Dvanmeploph{P}""")
 ###---[ USER BARU ]---###
 def newbie():
 	nama = input(f'{logo()}\n\n [{hh}<{P}] Hai Selamat Datang, Siapa Nama Kamu?\n Nama :{kk} ');open('.nama.json','w').write(nama)
-	input(f' {P}hallo {kk}{nama}{P}, Ini Adalah Script Premium\n Limited Edition Silahkan Di Gunakan Dan\n Jangan Di Perjual Belikan Ya, Terimakasih\n Silahkan Tekan Enter Untuk Masuk Ke Pilihan Login')
+	input(f' {P}Hallo {kk}{nama}{P}, Ini Adalah Script Premium\n Limited Edition Silahkan Di Gunakan Dan\n Jangan Di Perjual Belikan Ya, Terimakasih\n Silahkan Tekan Enter Untuk Masuk Ke Pilihan Login')
 	
 
 ###---[ INFOMASI USER ]---###
@@ -715,8 +715,8 @@ for x in range(1000):
 	if se in redmi:pass
 	else:redmi.append(se)
 abcd = open('.proxy.txt','r').read().splitlines()
-print(' total new proxy : '+str(len(abcd)))
-print(' total useragent : '+str(len(redmi)))
+print(' Total New Proxy : '+str(len(abcd)))
+print(' Total Useragent : '+str(len(redmi)))
 sleep(1)
 	
 	
@@ -759,7 +759,7 @@ def login():
 	if cookie in ['no','No','NO']:
 		open('.menu_login.json','w').write('no');clear_layar();no_login()
 	url = "https://business.facebook.com/business_locations"
-	head = {"user-agent": "Mozilla/5.0 (Linux; Android 8.1.0; MI 8 Build/OPM1.171019.011) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.86 Mobile Safari/537.36","referer": "https://www.facebook.com/","host": "business.facebook.com","origin": "https://business.facebook.com","upgrade-insecure-requests" : "1","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7","cache-control": "max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","content-type":"text/html; charset=utf-8"}
+	head = {"user-agent": "Mozilla/5.0 (Linux; Android 13; SAMSUNG SM-A346B/A346BXXU1AWB9) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/20.0 Chrome/106.0.5249.126 Mobile Safari/537.36","referer": "https://www.facebook.com/","host": "business.facebook.com","origin": "https://business.facebook.com","upgrade-insecure-requests" : "1","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7","cache-control": "max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","content-type":"text/html; charset=utf-8"}
 	cok = {'cookie':cookie}
 	try:
 		data = ses.get(url,headers=head,cookies=cok)
@@ -768,7 +768,7 @@ def login():
 		open('.cookie.txt','w').write(cookie)
 		open('.token.txt','w').write(token)
 		back()
-	except Exception as e:exit(f" [{M}>{P}] cookie invalid")
+	except Exception as e:exit(f" [{M}>{P}] Cookie Invalid")
 					
 				
 ###---[ MENU NO LOGIN ]---###
