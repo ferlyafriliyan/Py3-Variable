@@ -9,9 +9,7 @@ Author       = 'Rochmat Basuki [ github.com/RozhBasXYZ ]'
 Github       = 'github.com/Dvanmeploph'
 Facebook     = 'Facebook.com/Denventa.Xayonara.Team.UnlimitedARMY'
 Version      = '0.4' 
-
-
-###---[ WARNA ]--###
+### ------ [ WARNA ] ------ ###
 P = '\033[97m'  # PUTIH
 M = '\033[91m' # MERAH
 hh = '\033[92m'  # HIJAU
@@ -26,7 +24,7 @@ from datetime import datetime
 from time import sleep
 hp = platform.platform()
 ses = requests.Session()
-### --- [ Append ] --- ###
+### ------ [ Append ] ------ ###
 ugent = []
 ugen = []
 usam = []
