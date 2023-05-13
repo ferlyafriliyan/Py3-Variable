@@ -762,7 +762,7 @@ def login():
 		open('.cookie.txt','w').write(cookie)
 		open('.token.txt','w').write(token)
 		back()
-	except Exception as e:exit(f" [{M}>{P}] cookie invalid")
+	except Exception as e:exit(f" [{M}>{P}] Cookie Invalid")
 					
 				
 ###---[ MENU NO LOGIN ]---###
