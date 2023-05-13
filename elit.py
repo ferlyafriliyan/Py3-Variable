@@ -634,11 +634,11 @@ def logo():
   |______ |        |      |   
   |______ |_____ __|__    |                            
  Coded By   : {kk}Rochmat Basuki{P}, Version {kk}Premium{P} Limited User
- Updated By : {kk}Dvanmeploph{P}, Github : {kk}Dvanmeploph""")
+ Updated By : {kk}Dvanmeploph{P}, Github : {kk}Dvanmeploph{P}""")
 ###---[ USER BARU ]---###
 def newbie():
 	nama = input(f'{logo()}\n\n [{hh}<{P}] Hai Selamat Datang, Siapa Nama Kamu?\n Nama :{kk} ');open('.nama.json','w').write(nama)
-	input(f' {P}hallo {kk}{nama}{P}, Ini Adalah Script Premium\n Limited Edition Silahkan Di Gunakan Dan\n Jangan Di Perjual Belikan Ya, Terimakasih\n Silahkan Tekan Enter Untuk Masuk Ke Pilihan Login')
+	input(f' {P}Hallo {kk}{nama}{P}, Ini Adalah Script Premium\n Limited Edition Silahkan Di Gunakan Dan\n Jangan Di Perjual Belikan Ya, Terimakasih\n Silahkan Tekan Enter Untuk Masuk Ke Pilihan Login')
 	
 
 ###---[ INFOMASI USER ]---###
@@ -675,13 +675,11 @@ tetel, opsi, proxy = [], [], []
 cepeh, sam, redmi = [], [], []
 id, id2, loop ,ok , cp = [], [], 0, 0, 0
 
-
 ###---[ CLEAR LAYAR ]---###
 def clear_layar():
 	try:os.system('clear')
 	except:pass
 	
-
 ###---[ GLOBAL KEMBALI ]---###
 def back():
 	try:nama = open('.nama.json','r').read()
@@ -693,7 +691,6 @@ def back():
 		else:pilih_login()
 	except Exception as e:pilih_login()
 	
-
 ###---[ AUTO CREATE UA & PROXY ]---###
 try:
 	clear_layar()
@@ -719,7 +716,6 @@ print(' total new proxy : '+str(len(abcd)))
 print(' total useragent : '+str(len(redmi)))
 sleep(1)
 	
-	
 ###---[ PILIH JENIS LOGIN ]---###
 def pilih_login():
 	try:os.remove('.menu_login.json')
@@ -739,7 +735,6 @@ def pilih_login():
 	else:exit(f" [{M}>{P}] Isi Yang Benar")
 	back()
 
-
 ###---[ CEK COOKIES ]---###
 def get_data():
 	try:
@@ -749,7 +744,6 @@ def get_data():
 		nama = ses.get(f'https://graph.facebook.com/me?access_token={token}',cookies=ayangbabas).json()['name'].split(' ')[0].lower()
 		ya_login(nama,token,ayangbabas)
 	except Exception as e:login()
-
 	
 ###---[ LOGIN COOKIE ]---###
 def login():
@@ -787,7 +781,6 @@ def no_login():
 	elif ask in ['4','04']:cek_hasil()
 	elif ask in ['5','05']:pilih_login()
 	else:sys.exit(f" [{M}>{P}] Isi Yang Benar")
-
 	
 ###---[ MENU LOGIN ]---###
 def ya_login(n,t,c):
@@ -807,7 +800,6 @@ def ya_login(n,t,c):
 	elif ask in ['',' ',]:sys.exit(f" [{M}>{P}] Isi Yang Benar")
 	else:sys.exit(f" [{M}>{P}] Isi Yang Benar")
 		
-
 ###---[CEK HASIL CRACK ]---###
 def cek_hasil():
 	no,nom = 0,[]
@@ -841,7 +833,6 @@ def cek_hasil():
 		except:sys.exit(f" [{M}>{P}] File Tidak Ada Hasil CP")
 		print(kk+buka+P)
 	else:sys.exit(f" [{M}>{P}] Isi Yang Benar")
-		
 		
 ###---[ DUMP NO LOGIN ]---###
 def crack_file():
