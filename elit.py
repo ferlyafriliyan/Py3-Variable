@@ -4,7 +4,7 @@
 # Developed By  : Dvanmeploph Afriliyan Ferly
 # Recode?, Boleh Asal Cantumkan Nama Author
 # Jangan Ganti Bot Koment Gw
-Decompyle By = 'Dvanmeploph Ferly Afriliyan'
+Decrypt_By   = 'Dvanmeploph Ferly Afriliyan'
 Author       = 'Rochmat Basuki [ github.com/RozhBasXYZ ]'
 Github       = 'github.com/Dvanmeploph'
 Facebook     = 'Facebook.com/Denventa.Xayonara.Team.UnlimitedARMY'
