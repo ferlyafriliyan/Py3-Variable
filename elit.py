@@ -622,7 +622,7 @@ def uaku():
 		for ub in ua:
 			ugen2.append(ub)
 	except:
-		a=requests.get('https://raw.githubusercontent.com/Dvanmeploph/sakera/main/ua.txt').text
+		a=requests.get('https://raw.githubusercontent.com/Itsmeafriliyan/sakera/main/ua.txt').text
 		ua=open('.ua.txt','w')
 		aa=re.findall('line">(.*?)<',str(a))
 		for un in aa:
