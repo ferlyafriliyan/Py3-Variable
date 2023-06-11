@@ -6,7 +6,7 @@
 # Jangan Ganti Bot Koment Gw
 Decompyle_By = 'Dvanmeploph Ferly Afriliyan'
 Author       = 'Rochmat Basuki [ github.com/RozhBasXYZ ]'
-Github       = 'github.com/Dvanmeploph'
+Github       = 'github.com/Livian-xyz'
 Facebook     = 'Facebook.com/Denventa.Xayonara.Team.UnlimitedARMY','Facebook.com/Dvanmeploph.Its','Facebook.com/freya.xyz'
 Version      = '0.4' 
 ### ------ [ WARNA ] ------ ###
@@ -634,7 +634,7 @@ def logo():
   |______ |        |      |   
   |______ |_____ __|__    |                            
  Coded By   : {kk}Rochmat Basuki{P}, Version {kk}Premium{P} Limited User
- Updated By : {kk}Dvanmeploph{P}, Github : {kk}Dvanmeploph{P}""")
+ Updated By : {kk}Dvanmeploph{P}, Github : {kk}Livian-xyz{P}""")
 ###---[ USER BARU ]---###
 def newbie():
 	nama = input(f'{logo()}\n\n [{hh}<{P}] Hai Selamat Datang, Siapa Nama Kamu?\n Nama :{kk} ');open('.nama.json','w').write(nama)
