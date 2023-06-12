@@ -31,7 +31,7 @@ rm -rf $HOME/Elit
 pkg update && pkg upgrade -y
 pkg install python git -y
 pkg install python-pip
-git clone https://github.com/Livian-xyz/Elit
+git clone https://github.com/FerlyXyn/Elit
 cd Elit
 git pull
 pip3 install -r requirements.txt
