@@ -3,12 +3,14 @@ import platform
 import marshal
 import zlib
 import base64
+import binascii
 import os
+from cryptography.fernet import Fernet
 
 # Logo
 logo = '''
 ╔═╗┬ ┬   ╦  ╦┌─┐┬─┐┬┌─┐┌┐ ┬  ┌─┐
-╠═╝└┬┘───╚╗╔╝├─┤├┬┘│├─┤├┴┐│  ├┤
+╠═╝└┬┘───╚╗╔╝├─┤├┬┘│├─┤├┴┐│  ├┤ 
 ╩   ┴     ╚╝ ┴ ┴┴└─┴┴ ┴└─┘┴─┘└─┘
 '''
 
@@ -31,7 +33,7 @@ if read_tutorial.lower() == "y":
 print(logo)
 input_file = input("Masukkan path file input: ")
 
-# Meminta output file path
+# Meminta output file 
 output_file = input("Masukkan path file output: ")
 
 # Jumlah iterasi enkripsi
@@ -63,13 +65,23 @@ def encrypt_file():
     encrypted_code += f']\n\n'
 
     # Baca kode dari file input
-    with open(input_file, 'r') as file:
+    with open(input_file, 'r', encoding='utf-8') as file:
         code = file.read()
 
     # Enkripsi kode sebanyak iterasi yang ditentukan
     for _ in range(num_iterations):
-        # Enkripsi kode menggunakan zlib dan base64
+        # Enkripsi kode menggunakan marshal, zlib, dan base64
         encrypted_data = base64.b64encode(zlib.compress(marshal.dumps(code.encode()))).decode()
+
+        # Generate kunci acak untuk enkripsi Fernet
+        key = Fernet.generate_key()
+        fernet = Fernet(key)
+
+        # Enkripsi kunci menggunakan marshal, zlib, dan base64
+        encrypted_key = base64.b64encode(zlib.compress(marshal.dumps(key))).decode()
+
+        # Enkripsi data menggunakan Fernet
+        encrypted_data = fernet.encrypt(encrypted_data.encode()).decode()
 
         # Tulis kode terenkripsi ke file output
         with open(output_file, 'w') as file:
@@ -77,9 +89,12 @@ def encrypt_file():
             file.write(f'import marshal\n')
             file.write(f'import zlib\n')
             file.write(f'import base64\n')
+            file.write(f'import binascii\n')
+            file.write(f'encrypted_key = "{encrypted_key}"\n')
+            file.write(f'decrypted_key = marshal.loads(zlib.decompress(base64.b64decode(encrypted_key)))\n')
             file.write(f'encrypted_data = "{encrypted_data}"\n')
-            file.write(f'decrypted_data = marshal.loads(zlib.decompress(base64.b64decode(encrypted_data)))\n')
-            file.write(f'exec(decrypted_data)\n\n')
+            file.write(f'decrypted_data = Fernet(decrypted_key).decrypt(encrypted_data.encode()).decode()\n')
+            file.write(f'exec(marshal.loads(zlib.decompress(base64.b64decode(decrypted_data))))\n\n')
             file.write(f'Afriliyan_XV4 = [\n')
             for _ in range(3500):
                 file.write(f'"000000000000000","000000000000000","000000000000000","000000000000000","000000000000000",\n')
