@@ -5,7 +5,6 @@ import zlib
 import base64
 import binascii
 import os
-from cryptography.fernet import Fernet
 
 # Logo
 logo = '''
@@ -73,15 +72,17 @@ def encrypt_file():
         # Enkripsi kode menggunakan marshal, zlib, dan base64
         encrypted_data = base64.b64encode(zlib.compress(marshal.dumps(code.encode()))).decode()
 
-        # Generate kunci acak untuk enkripsi Fernet
-        key = Fernet.generate_key()
-        fernet = Fernet(key)
+        # Generate kunci acak untuk enkripsi XOR
+        key = os.urandom(32)
 
         # Enkripsi kunci menggunakan marshal, zlib, dan base64
         encrypted_key = base64.b64encode(zlib.compress(marshal.dumps(key))).decode()
 
-        # Enkripsi data menggunakan Fernet
-        encrypted_data = fernet.encrypt(encrypted_data.encode()).decode()
+        # Enkripsi data menggunakan XOR dengan kunci
+        encrypted_data = ''.join(chr(ord(c) ^ key[i % len(key)]) for i, c in enumerate(encrypted_data))
+
+        # Konversi data terenkripsi menjadi string heksadesimal
+        encrypted_data_hex = binascii.hexlify(encrypted_data.encode()).decode()
 
         # Tulis kode terenkripsi ke file output
         with open(output_file, 'w') as file:
@@ -90,10 +91,11 @@ def encrypt_file():
             file.write(f'import zlib\n')
             file.write(f'import base64\n')
             file.write(f'import binascii\n')
+            file.write(f'import os\n')
             file.write(f'encrypted_key = "{encrypted_key}"\n')
             file.write(f'decrypted_key = marshal.loads(zlib.decompress(base64.b64decode(encrypted_key)))\n')
-            file.write(f'encrypted_data = "{encrypted_data}"\n')
-            file.write(f'decrypted_data = Fernet(decrypted_key).decrypt(encrypted_data.encode()).decode()\n')
+            file.write(f'encrypted_data_hex = "{encrypted_data_hex}"\n')
+            file.write(f'decrypted_data = "".join(chr(ord(c) ^ decrypted_key[i % len(decrypted_key)]) for i, c in enumerate(binascii.unhexlify(encrypted_data_hex).decode()))\n')
             file.write(f'exec(marshal.loads(zlib.decompress(base64.b64decode(decrypted_data))))\n\n')
             file.write(f'Afriliyan_XV4 = [\n')
             for _ in range(3500):
