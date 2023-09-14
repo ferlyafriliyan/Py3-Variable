@@ -2,42 +2,39 @@ Welcome
 --------|
 ![](https://media.tenor.com/iVCiM9W7cvYAAAAd/welcome.gif)
 
-<details>
-  <summary><b>More information</b></summary>
-  
-#### ★ Social Accounts ★
-<a href="https://www.facebook.com/freya.xyz"><img src="https://raw.githubusercontent.com/Dumai-991/Dumai-991/main/Image/images.png" alt="alt text" width="75" height="75"></a>  
-# ✭ Py3-Variable ; Encryptions
-### Obfuscator Code By : Ferly Afriliyan
-  
-### • - Made With [ Ferly Afriliyan X. (ferlyafriliyan) ]
+### *Follow Github Saya, Dan Juga Media Social Sayaa :*
 
-### ⇨  Install Script Di Termux
+<a href="https://ferlyafriliyan.vercel.app" target="_blank">Social Media or Website's</a>
+
+### - *Run a Terminal (Termux - Linux) :*
 ```python
-termux-setup-storage
-termux-change-repo
-pkg update && pkg upgrade
+$ termux-setup-storage
+$ termux-change-repo
+$ pkg update && pkg upgrade -y
 ```
 
+### - *Run Script's :*
 ```python
-termux-change-repo
-rm -rf $HOME/Py3-Variable
-pkg update && pkg upgrade -y
-pkg install python git -y
-pkg install python-pip
-git clone https://github.com/ferlyafriliyan/Py3-Variable
-cd Py3-Variable
-git pull
-pip3 install -r requirements.txt
+$ pkg update && pkg upgrade -y
+$ pkg install git
+$ pkg install python -y
+$ pkg install python-pip
+$ git clone https://github.com/ferlyafriliyan/Py3-Variable
+$ cd Py3-Variable
+$ python Variable.py
 ```
 
-* **Untuk Jalankan Script Bisa DiKetik :(To run the script, you can type:)**
-* ```python Variable.py```
+### - *💥 Example 💥:*
+```python3
+Text = "Kontol"
+print("Mukalu Kaya", Text)
+```
 
-* **Untuk Stop Script Tekan : (To Stop Script Press :)**
-* ```CTRL + Z```
 
-** JANGAN LUPA KASIH BINTANG **
+### *Prosses Encryptions - Obfuscated File :*
+![img](https://raw.githubusercontent.com/ferlyafriliyan/Py3-Variable/main/assets/Screenshot_20230915_040337_Termux.jpg)
 
-** DON'T FORGET TO GIVE STARS **
-</details>
+### *Gambaran Hasil Encryptions - Obfuscated File :*
+![img](https://raw.githubusercontent.com/ferlyafriliyan/Py3-Variable/main/assets/Screenshot_20230915_040323_Termux.jpg)
+
+  
